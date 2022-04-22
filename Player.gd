@@ -3,6 +3,14 @@ extends KinematicBody2D
 # Vector2(X,Y)
 var motion = Vector2.ZERO
 # var direction : Vector2 = Vector2()
+var starting_position
+
+const invincibility_duration = 1.5
+onready var hurtbox = $Hurtbox_Player
+onready var blinker = $Blinker
+
+func _ready():
+	starting_position = get_global_position()
 
 func _physics_process(delta):
 	motion = Vector2()
@@ -60,3 +68,11 @@ func old(delta):
 	
 	print(motion)
 	motion = move_and_slide(motion)
+
+
+func _on_Hurtbox_Player_area_entered(area):
+	if !hurtbox.is_invincible:
+		print("ouch")
+		blinker.start_blinking(self, invincibility_duration)
+		hurtbox.start_invincibility(invincibility_duration)
+		get_tree().change_scene("res://Scene.tscn")
