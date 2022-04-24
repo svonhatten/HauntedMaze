@@ -7,7 +7,7 @@ You as the player are at the start of a mysterious maze out in the middle of the
 
 1. `git clone` the project
 
-2. open the `/builds` folder, and open the latest version folder
+2. open the `/builds` folder, and open the latest version folder, then your respective OS folder
 
 3. run the `HauntedMaze.exe` file and have fun!
 
@@ -17,6 +17,12 @@ Player             |  Ghost (Enemy)
 :-------------------------:|:-------------------------:
 ![player](https://github.com/svonhatten/HauntedMaze/blob/main/Player_real.png)  |  ![ghost](https://github.com/svonhatten/HauntedMaze/blob/main/Ghost_real.png)
 
+
+## Controls
+
+Player Abilities            |  Keyboard Controls
+:-------------------------:|:-------------------------:
+Movement  |  W, A, S, D keys
 
 ## Screenshots from In-Game
 
