@@ -19,6 +19,16 @@ func start_invincibility(invincibility_duration):
 func _on_Hurtbox_Player_area_entered(area):
 	# when player is hurt, shader will be set to the whitened shader for .15 sec
 	# before going back to normal
-	whiten_material.set_shader_param("whiten", true);
-	yield(get_tree().create_timer(whiten_duration), "timeout");
-	whiten_material.set_shader_param("whiten", false);
+	# whiten_material.set_shader_param("whiten", true)
+	# yield(get_tree().create_timer(whiten_duration), "timeout")
+	# whiten_material.set_shader_param("whiten", false)
+	pass
+
+
+func _on_Hurtbox_Player_body_entered(body):
+	# when player is hurt, shader will be set to the whitened shader for .15 sec
+	# before going back to normal
+	if (body.get_name() == 'Ghost'):
+		whiten_material.set_shader_param("whiten", true)
+		yield(get_tree().create_timer(whiten_duration), "timeout")
+		whiten_material.set_shader_param("whiten", false)

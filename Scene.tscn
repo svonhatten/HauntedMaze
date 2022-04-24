@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=147 format=2]
 
 [ext_resource path="res://assets/Tile_J.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/Tile_A.jpg" type="Texture" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://whiten_material.tres" type="Material" id=20]
 [ext_resource path="res://Blinker.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Hitbox.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Ghost.gd" type="Script" id=23]
+[ext_resource path="res://End_Game.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 100, 0, 100, 100, 0, 100 )
@@ -401,12 +403,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 14.4875, 13.4883 )
 
+[sub_resource type="RectangleShape2D" id=103]
+extents = Vector2( 14.5082, 13.5299 )
+
 [sub_resource type="Curve2D" id=48]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -950, 552, 0, 0, 0, 0, -950, 946, 0, 0, 0, 0, -852, 947, 0, 0, 0, 0, -851, 550, 0, 0, 0, 0, -950, 552 )
 }
 
 [sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 14, 13 )
+
+[sub_resource type="RectangleShape2D" id=104]
 extents = Vector2( 14, 13 )
 
 [sub_resource type="Curve2D" id=50]
@@ -417,6 +425,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 13.015, 13.4995 )
 
+[sub_resource type="RectangleShape2D" id=105]
+extents = Vector2( 13.0202, 13.4995 )
+
 [sub_resource type="Curve2D" id=52]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -950, 49, 0, 0, 0, 0, -951, 151, 0, 0, 0, 0, -851, 151, 0, 0, 0, 0, -851, 48, 0, 0, 0, 0, -950, 49 )
@@ -424,6 +435,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=53]
 extents = Vector2( 14.0042, 13.0092 )
+
+[sub_resource type="RectangleShape2D" id=106]
+extents = Vector2( 14.0091, 13.0044 )
 
 [sub_resource type="Curve2D" id=54]
 _data = {
@@ -433,6 +447,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 12.9992, 13.9835 )
 
+[sub_resource type="RectangleShape2D" id=107]
+extents = Vector2( 13.0097, 14.0149 )
+
 [sub_resource type="Curve2D" id=55]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -51, -546, 0, 0, 0, 0, -49, -153, 0, 0, 0, 0, 46, -153, 0, 0, 0, 0, 46, -546, 0, 0, 0, 0, -51, -546 )
@@ -440,6 +457,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=64]
 extents = Vector2( 13.4998, 12.0023 )
+
+[sub_resource type="RectangleShape2D" id=108]
+extents = Vector2( 13.5024, 12.0024 )
 
 [sub_resource type="Curve2D" id=56]
 _data = {
@@ -449,6 +469,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 13.0095, 11.9994 )
 
+[sub_resource type="RectangleShape2D" id=109]
+extents = Vector2( 12.9993, 11.9994 )
+
 [sub_resource type="Curve2D" id=57]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 949, 651, 0, 0, 0, 0, 948, 948, 0, 0, 0, 0, 852, 948, 0, 0, 0, 0, 849, 850, 0, 0, 0, 0, 751, 850, 0, 0, 0, 0, 750, 749, 0, 0, 0, 0, 850, 748, 0, 0, 0, 0, 850, 650, 0, 0, 0, 0, 949, 651 )
@@ -456,6 +479,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 12.9999, 12.4999 )
+
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 13.0016, 12.4999 )
 
 [sub_resource type="Curve2D" id=58]
 _data = {
@@ -465,6 +491,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 11.4997, 12.9964 )
 
+[sub_resource type="RectangleShape2D" id=111]
+extents = Vector2( 11.4998, 12.9963 )
+
 [sub_resource type="Curve2D" id=59]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 950, 247, 0, 0, 0, 0, 951, 351, 0, 0, 0, 0, 650, 351, 0, 0, 0, 0, 649, 247, 0, 0, 0, 0, 950, 247 )
@@ -472,6 +501,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 12.0042, 11.504 )
+
+[sub_resource type="RectangleShape2D" id=112]
+extents = Vector2( 11.9947, 11.4898 )
 
 [sub_resource type="Curve2D" id=60]
 _data = {
@@ -481,6 +513,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 13.0073, 11.4976 )
 
+[sub_resource type="RectangleShape2D" id=113]
+extents = Vector2( 13.0073, 11.5077 )
+
 [sub_resource type="Curve2D" id=61]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 554, -947, 0, 0, 0, 0, 748, -950, 0, 0, 0, 0, 747, -850, 0, 0, 0, 0, 551, -849, 0, 0, 0, 0, 554, -947 )
@@ -489,12 +524,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 11.9984, 12.5301 )
 
+[sub_resource type="RectangleShape2D" id=114]
+extents = Vector2( 12.0062, 12.5223 )
+
 [sub_resource type="Curve2D" id=62]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 147, -851, 0, 0, 0, 0, 147, -950, 0, 0, 0, 0, 47, -952, 0, 0, 0, 0, 47, -851, 0, 0, 0, 0, 147, -851 )
 }
 
 [sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 13, 11 )
+
+[sub_resource type="RectangleShape2D" id=115]
 extents = Vector2( 13, 11 )
 
 [sub_resource type="Curve2D" id=72]
@@ -505,6 +546,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 13.0093, 11.5096 )
 
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 13.0091, 11.5045 )
+
 [sub_resource type="Curve2D" id=74]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -351, 50, 0, 0, 0, 0, -350, 147, 0, 0, 0, 0, -648, 148, 0, 0, 0, 0, -649, 49, 0, 0, 0, 0, -351, 50 )
@@ -512,6 +556,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 12.5045, 10.9997 )
+
+[sub_resource type="RectangleShape2D" id=117]
+extents = Vector2( 12.4941, 10.9997 )
 
 [sub_resource type="Curve2D" id=75]
 _data = {
@@ -521,6 +568,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 11.4983, 13 )
 
+[sub_resource type="RectangleShape2D" id=118]
+extents = Vector2( 11.4983, 12.9966 )
+
 [sub_resource type="Curve2D" id=76]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -53, -753, 0, 0, 0, 0, -450, -751, 0, 0, 0, 0, -448, -651, 0, 0, 0, 0, -51, -653, 0, 0, 0, 0, -53, -753 )
@@ -528,6 +578,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 11.4999, 13.5021 )
+
+[sub_resource type="RectangleShape2D" id=119]
+extents = Vector2( 11.4998, 13.4974 )
 
 [sub_resource type="Curve2D" id=77]
 _data = {
@@ -537,6 +590,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 11.4999, 12.5025 )
 
+[sub_resource type="RectangleShape2D" id=120]
+extents = Vector2( 11.5026, 12.5078 )
+
 [sub_resource type="Curve2D" id=78]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 152, -449, 0, 0, 0, 0, 147, -52, 0, 0, 0, 0, 249, -52, 0, 0, 0, 0, 252, -250, 0, 0, 0, 0, 452, -252, 0, 0, 0, 0, 450, -346, 0, 0, 0, 0, 249, -352, 0, 0, 0, 0, 245, -448, 0, 0, 0, 0, 152, -449 )
@@ -544,6 +600,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 13.0052, 11.5116 )
+
+[sub_resource type="RectangleShape2D" id=121]
+extents = Vector2( 13.0053, 11.5054 )
 
 [sub_resource type="Curve2D" id=79]
 _data = {
@@ -553,12 +612,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 11.4974, 12.4949 )
 
+[sub_resource type="RectangleShape2D" id=122]
+extents = Vector2( 11.4999, 12.4974 )
+
 [sub_resource type="Curve2D" id=80]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -253, 651, 0, 0, 0, 0, -253, 749, 0, 0, 0, 0, -450, 751, 0, 0, 0, 0, -449, 649, 0, 0, 0, 0, -253, 651 )
 }
 
 [sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 12.5, 11 )
+
+[sub_resource type="RectangleShape2D" id=123]
 extents = Vector2( 12.5, 11 )
 
 [sub_resource type="Curve2D" id=88]
@@ -569,6 +634,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=89]
 extents = Vector2( 12.9993, 11.4945 )
 
+[sub_resource type="RectangleShape2D" id=124]
+extents = Vector2( 12.9993, 11.4997 )
+
 [sub_resource type="Curve2D" id=90]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 445, 49, 0, 0, 0, 0, 446, 248, 0, 0, 0, 0, 352, 251, 0, 0, 0, 0, 350, 154, 0, 0, 0, 0, -48, 153, 0, 0, 0, 0, -50, 248, 0, 0, 0, 0, -152, 249, 0, 0, 0, 0, -154, 47, 0, 0, 0, 0, 445, 49 )
@@ -576,6 +644,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=94]
 extents = Vector2( 12.5024, 11.9949 )
+
+[sub_resource type="RectangleShape2D" id=125]
+extents = Vector2( 12.5049, 11.9999 )
 
 [sub_resource type="Curve2D" id=91]
 _data = {
@@ -585,6 +656,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id=95]
 extents = Vector2( 12.0025, 11.0024 )
 
+[sub_resource type="RectangleShape2D" id=126]
+extents = Vector2( 11.9998, 10.9999 )
+
 [sub_resource type="Curve2D" id=92]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -653, -854, 0, 0, 0, 0, -652, -653, 0, 0, 0, 0, -752, -653, 0, 0, 0, 0, -751, -854, 0, 0, 0, 0, -653, -854 )
@@ -592,6 +666,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id=96]
 extents = Vector2( 12.4999, 11.4949 )
+
+[sub_resource type="RectangleShape2D" id=127]
+extents = Vector2( 12.5023, 11.5023 )
 
 [sub_resource type="RectangleShape2D" id=98]
 extents = Vector2( 27.5, 1.5 )
@@ -609,6 +686,7 @@ tile_data = PoolIntArray( -589834, 3, 0, -589833, 2, 0, -589832, 9, 0, -589831, 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( -50, 976 )
 collision_layer = 2
+collision_mask = 5
 motion/sync_to_physics = true
 script = ExtResource( 13 )
 __meta__ = {
@@ -2255,6 +2333,7 @@ script = ExtResource( 16 )
 position = Vector2( 0.960419, 8.00485 )
 collision_layer = 4
 collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2267,6 +2346,8 @@ position = Vector2( -0.962799, -6.50726 )
 shape = SubResource( 45 )
 
 [node name="Hitbox_Ghost" parent="Enemy_Path_1/Enemy_Follow_1/Ghost_1" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" index="0"]
 position = Vector2( -0.945679, -6.51224 )
@@ -2282,6 +2363,9 @@ rotate = false
 script = ExtResource( 18 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_2/Enemy_Follow_2"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2295,6 +2379,16 @@ texture = ExtResource( 17 )
 position = Vector2( 1.45694, -2.45621 )
 shape = SubResource( 47 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.39471, -2.49783 )
+rotation = -7.45058e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 103 )
+
 [node name="Enemy_Path_3" type="Path2D" parent="."]
 curve = SubResource( 48 )
 
@@ -2305,6 +2399,9 @@ rotate = false
 script = ExtResource( 19 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_3/Enemy_Follow_3"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2318,6 +2415,14 @@ texture = ExtResource( 17 )
 position = Vector2( -3, -3 )
 shape = SubResource( 49 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -3.00002, -2.99994 )
+shape = SubResource( 104 )
+
 [node name="Enemy_Path_4" type="Path2D" parent="."]
 curve = SubResource( 50 )
 
@@ -2328,6 +2433,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_4/Enemy_Follow_4"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2340,6 +2448,14 @@ texture = ExtResource( 17 )
 position = Vector2( 3.01506, 3.4996 )
 shape = SubResource( 51 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 3.0202, 3.4996 )
+shape = SubResource( 105 )
+
 [node name="Enemy_Path_5" type="Path2D" parent="."]
 curve = SubResource( 52 )
 
@@ -2350,6 +2466,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_5/Enemy_Follow_5"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2363,6 +2482,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1.02454, 0.990112 )
 shape = SubResource( 53 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.00006, 1.00482 )
+shape = SubResource( 106 )
+
 [node name="Enemy_Path_6" type="Path2D" parent="."]
 curve = SubResource( 54 )
 
@@ -2373,6 +2500,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_6/Enemy_Follow_6"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2385,6 +2515,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1.96844, 3.00494 )
 shape = SubResource( 63 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 2.01035, 3.01526 )
+shape = SubResource( 107 )
+
 [node name="Enemy_Path_7" type="Path2D" parent="."]
 curve = SubResource( 55 )
 
@@ -2395,6 +2533,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_7/Enemy_Follow_7"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2408,6 +2549,14 @@ texture = ExtResource( 17 )
 position = Vector2( -0.505249, 0.997192 )
 shape = SubResource( 64 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -0.502563, 1.00757 )
+shape = SubResource( 108 )
+
 [node name="Enemy_Path_8" type="Path2D" parent="."]
 curve = SubResource( 56 )
 
@@ -2418,6 +2567,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_8/Enemy_Follow_8"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2431,6 +2583,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1.00003, -0.0100708 )
 shape = SubResource( 65 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.00003, -0.0101929 )
+shape = SubResource( 109 )
+
 [node name="Enemy_Path_9" type="Path2D" parent="."]
 curve = SubResource( 57 )
 
@@ -2441,6 +2601,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_9/Enemy_Follow_9"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2454,6 +2617,14 @@ texture = ExtResource( 17 )
 position = Vector2( 0.999939, -0.506836 )
 shape = SubResource( 66 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 0.99826, -0.500488 )
+shape = SubResource( 110 )
+
 [node name="Enemy_Path_10" type="Path2D" parent="."]
 curve = SubResource( 58 )
 
@@ -2464,6 +2635,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_10/Enemy_Follow_10"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2477,6 +2651,16 @@ texture = ExtResource( 17 )
 position = Vector2( 0.486816, -1.00334 )
 shape = SubResource( 67 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 0.486328, -0.996613 )
+rotation = -1.39698e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 111 )
+
 [node name="Enemy_Path_11" type="Path2D" parent="."]
 curve = SubResource( 59 )
 
@@ -2487,6 +2671,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_11/Enemy_Follow_11"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2500,6 +2687,16 @@ texture = ExtResource( 17 )
 position = Vector2( 2.99506, 0.52417 )
 shape = SubResource( 68 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 2.99504, 0.519287 )
+rotation = -1.86264e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 112 )
+
 [node name="Enemy_Path_12" type="Path2D" parent="."]
 curve = SubResource( 60 )
 
@@ -2510,6 +2707,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_12/Enemy_Follow_12"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2523,6 +2723,14 @@ texture = ExtResource( 17 )
 position = Vector2( 0.949707, 2.52002 )
 shape = SubResource( 69 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 0.949463, 2.51001 )
+shape = SubResource( 113 )
+
 [node name="Enemy_Path_13" type="Path2D" parent="."]
 curve = SubResource( 61 )
 
@@ -2533,6 +2741,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_13/Enemy_Follow_13"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2545,6 +2756,14 @@ texture = ExtResource( 17 )
 position = Vector2( -2.99951, -2.53027 )
 shape = SubResource( 70 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -3.00732, -2.52258 )
+shape = SubResource( 114 )
+
 [node name="Enemy_Path_14" type="Path2D" parent="."]
 curve = SubResource( 62 )
 
@@ -2555,6 +2774,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_14/Enemy_Follow_14"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2568,6 +2790,14 @@ texture = ExtResource( 17 )
 position = Vector2( 2, 0 )
 shape = SubResource( 71 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 2, 0 )
+shape = SubResource( 115 )
+
 [node name="Enemy_Path_15" type="Path2D" parent="."]
 curve = SubResource( 72 )
 
@@ -2578,6 +2808,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_15/Enemy_Follow_15"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2592,6 +2825,16 @@ position = Vector2( 1.0097, -1.50916 )
 rotation = -1.86264e-09
 shape = SubResource( 73 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.01001, -1.50476 )
+rotation = -1.86264e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 116 )
+
 [node name="Enemy_Path_16" type="Path2D" parent="."]
 curve = SubResource( 74 )
 
@@ -2602,6 +2845,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_16/Enemy_Follow_16"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2615,6 +2861,14 @@ texture = ExtResource( 17 )
 position = Vector2( -1.49484, -0.999756 )
 shape = SubResource( 81 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -1.49487, -0.99971 )
+shape = SubResource( 117 )
+
 [node name="Enemy_Path_17" type="Path2D" parent="."]
 curve = SubResource( 75 )
 
@@ -2625,6 +2879,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_17/Enemy_Follow_17"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2638,6 +2895,16 @@ texture = ExtResource( 17 )
 position = Vector2( -5.4949, 1.01648 )
 shape = SubResource( 82 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -5.49828, 1.01343 )
+rotation = -6.98492e-10
+scale = Vector2( 1, 1 )
+shape = SubResource( 118 )
+
 [node name="Enemy_Path_18" type="Path2D" parent="."]
 curve = SubResource( 76 )
 
@@ -2648,6 +2915,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_18/Enemy_Follow_18"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2661,6 +2931,14 @@ texture = ExtResource( 17 )
 position = Vector2( 0.500122, -3.49731 )
 shape = SubResource( 83 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 0.500122, -3.49719 )
+shape = SubResource( 119 )
+
 [node name="Enemy_Path_19" type="Path2D" parent="."]
 curve = SubResource( 77 )
 
@@ -2671,6 +2949,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_19/Enemy_Follow_19"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2684,6 +2965,14 @@ texture = ExtResource( 17 )
 position = Vector2( -3.49463, 2.51318 )
 shape = SubResource( 84 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -3.49707, 2.50769 )
+shape = SubResource( 120 )
+
 [node name="Enemy_Path_20" type="Path2D" parent="."]
 curve = SubResource( 78 )
 
@@ -2694,6 +2983,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_20/Enemy_Follow_20"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2707,6 +2999,14 @@ texture = ExtResource( 17 )
 position = Vector2( -0.943176, 4.51263 )
 shape = SubResource( 85 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -0.980774, 4.50598 )
+shape = SubResource( 121 )
+
 [node name="Enemy_Path_21" type="Path2D" parent="."]
 curve = SubResource( 79 )
 
@@ -2717,6 +3017,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_21/Enemy_Follow_21"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2730,6 +3033,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1.49792, 2.4949 )
 shape = SubResource( 86 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.49927, 2.4975 )
+shape = SubResource( 122 )
+
 [node name="Enemy_Path_22" type="Path2D" parent="."]
 curve = SubResource( 80 )
 
@@ -2740,6 +3051,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_22/Enemy_Follow_22"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2753,6 +3067,14 @@ texture = ExtResource( 17 )
 position = Vector2( -0.5, 0 )
 shape = SubResource( 87 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( -0.5, 6.10352e-05 )
+shape = SubResource( 123 )
+
 [node name="Enemy_Path_23" type="Path2D" parent="."]
 curve = SubResource( 88 )
 
@@ -2763,6 +3085,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_23/Enemy_Follow_23"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2776,6 +3101,16 @@ texture = ExtResource( 17 )
 position = Vector2( 0.0103149, -1.5047 )
 shape = SubResource( 89 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 0.0206337, -1.49973 )
+rotation = -1.86264e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 124 )
+
 [node name="Enemy_Path_24" type="Path2D" parent="."]
 curve = SubResource( 90 )
 
@@ -2786,6 +3121,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_24/Enemy_Follow_24"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2799,6 +3137,14 @@ texture = ExtResource( 17 )
 position = Vector2( 2.50235, -1.99487 )
 shape = SubResource( 94 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 2.50491, -1.99976 )
+shape = SubResource( 125 )
+
 [node name="Enemy_Path_25" type="Path2D" parent="."]
 curve = SubResource( 91 )
 
@@ -2809,6 +3155,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_25/Enemy_Follow_25"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2822,6 +3171,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1.00256, -0.00749207 )
 shape = SubResource( 95 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 1.00006, -4.57764e-05 )
+shape = SubResource( 126 )
+
 [node name="Enemy_Path_26" type="Path2D" parent="."]
 curve = SubResource( 92 )
 
@@ -2832,6 +3189,9 @@ rotate = false
 script = ExtResource( 16 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Enemy_Path_26/Enemy_Follow_26"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -2845,6 +3205,14 @@ texture = ExtResource( 17 )
 position = Vector2( 5.50061, -0.470245 )
 shape = SubResource( 96 )
 
+[node name="Hitbox_Ghost" parent="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D" instance=ExtResource( 22 )]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" index="0"]
+position = Vector2( 5.50244, -0.492554 )
+shape = SubResource( 127 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -50, 1000 )
 __meta__ = {
@@ -2855,7 +3223,147 @@ __meta__ = {
 position = Vector2( 0.5, -1.5 )
 shape = SubResource( 98 )
 
+[node name="End_Game_Collision" parent="." instance=ExtResource( 24 )]
+position = Vector2( 327, -989 )
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="End_Game_Collision" index="0"]
+position = Vector2( 23.5, -6 )
+
 [connection signal="area_entered" from="Player/Hurtbox_Player" to="Player" method="_on_Hurtbox_Player_area_entered"]
 [connection signal="area_entered" from="Player/Hurtbox_Player" to="Player/Hurtbox_Player" method="_on_Hurtbox_Player_area_entered"]
+[connection signal="body_entered" from="Player/Hurtbox_Player" to="Player" method="_on_Hurtbox_Player_body_entered"]
+[connection signal="body_entered" from="Player/Hurtbox_Player" to="Player/Hurtbox_Player" method="_on_Hurtbox_Player_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" to="Enemy_Path_1/Enemy_Follow_1/Ghost_1" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" to="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" to="Enemy_Path_1/Enemy_Follow_1/Ghost_1" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" to="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="area_entered" from="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_area_entered"]
+[connection signal="body_entered" from="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="body_entered" from="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" to="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost" method="_on_Hitbox_Ghost_body_entered"]
+[connection signal="area_entered" from="End_Game_Collision" to="End_Game_Collision" method="_on_End_Game_Collision_area_entered"]
 
 [editable path="Enemy_Path_1/Enemy_Follow_1/Ghost_1/Hitbox_Ghost"]
+[editable path="Enemy_Path_2/Enemy_Follow_2/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_3/Enemy_Follow_3/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_4/Enemy_Follow_4/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_5/Enemy_Follow_5/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_6/Enemy_Follow_6/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_7/Enemy_Follow_7/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_8/Enemy_Follow_8/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_9/Enemy_Follow_9/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_10/Enemy_Follow_10/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_11/Enemy_Follow_11/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_12/Enemy_Follow_12/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_13/Enemy_Follow_13/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_14/Enemy_Follow_14/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_15/Enemy_Follow_15/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_16/Enemy_Follow_16/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_17/Enemy_Follow_17/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_18/Enemy_Follow_18/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_19/Enemy_Follow_19/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_20/Enemy_Follow_20/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_21/Enemy_Follow_21/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_22/Enemy_Follow_22/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_23/Enemy_Follow_23/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_24/Enemy_Follow_24/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_25/Enemy_Follow_25/KinematicBody2D/Hitbox_Ghost"]
+[editable path="Enemy_Path_26/Enemy_Follow_26/KinematicBody2D/Hitbox_Ghost"]
+[editable path="End_Game_Collision"]
